@@ -12,6 +12,7 @@ docker run -it --rm --net vuln-network --ip 10.0.0.2 ftp-container
 
 To run VSFTP Deamon:
 /opt/infected/vstfpd
----
+
+
 netstat -plantu should show LISTEN on 21 port
 on the attack station nmap 10.0.0.2 should show ftp on port 21
