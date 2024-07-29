@@ -2,7 +2,7 @@
 Container vulnerable vstfpd v2.3.4 service
 
 Prequesites:
-docker
+docker: sudo apt install docker.io
 nmap
 
 To run Docker:
