@@ -9,7 +9,6 @@ RUN apt-get update && apt-get install -y \
 	build-essential \
 	iproute2 \
 	tcpdump \
-	netcat \
 	locate \
 	net-tools \
 	ufw \
@@ -25,6 +24,8 @@ RUN cd /opt/infected && cp vsftpd /usr/local/sbin/vsftpd && \
 RUN mkdir /var/ftp/ && useradd -d /var/ftp ftp
 RUN chown root:root /var/ftp && \
 	chmod og-w /var/ftp
-CMD ["/opt/infected/vsftpd"]
-CMD ["bash"]
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["bash", "/entrypoint.sh"]
+
 
